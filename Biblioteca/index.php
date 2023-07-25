@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header class="header">
-            <img src="ruta/a/tu/logo.png" alt="Logo" class="logo">
+            <img src="Biblioteca\resources\img\logo.png" alt="Logo" class="logo">
             <div class="welcome">
                 Bienvenido a tu rincón de lecturas
             </div>
