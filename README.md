@@ -1,17 +1,17 @@
-## Equipo: 4Library
+## Team: 4Library
 
 # 4Library
 ***
 .
 
-## 💻 Tecnologías
+## 💻 Technologies
 ***
 <div> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
 <img 
 
 
-## 🛠 Herramientas
+## 🛠 Tools
 ***
 <div>
 <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/>
@@ -21,13 +21,13 @@
 <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> 
 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" width="40" heigth="40"/> </div>
 
-### 💻 Versiones de algunas tecnologías y herramientas usadas en este proyecto 
+### 💻 A list of another technologies used in this proyect
 ***
 - [HTML](https://developer.mozilla.org/es/docs/Web/HTML) : versión html5
 - [CSS](https://developer.mozilla.org/es/docs/Web/CSS): versión css3
 - [Visual Studio Code](https://code.visualstudio.com/): Version 1.79.
 
-## 💡 Instalación
+## 💡 Installation
 ***
 1. Clonar el proyecto 
 - git clone https://github.com/4Library/4Library.git
@@ -36,7 +36,7 @@
 
 
 
-## 👾 Desarrolladores
+## 👾 Developers
 ***
 - [Jacinemi Urquiola Alvarez](https://github.com/JacinemiUA) Developer
 - [Rafaela Silveira](https://github.com/todaunabossa) Scrum Master - Developer
