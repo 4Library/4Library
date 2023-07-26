@@ -1,60 +1,27 @@
 /* Estilos generales */
+html,
 body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f5f0e1; /* Color crema para el fondo */
+  display: flex;
+  flex-direction: column;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  font-family: Poppins, sans-serif;
 }
 
-/* Estilos para el header */
-.header {
-  background-image: url("../img/portada.jpg"); /* Reemplaza con la ruta de tu imagen de portada */
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  height: 100%;
-}
-
-.logo {
-  float: left;
-  width: 80px;
-  height: 80px;
-  margin-top: 10px;
-}
 
 .welcome {
-  font-size: 24px;
-  margin-top: 50px;
+  font-size: 30px;
+  text-align: center;
+  margin: 20px 0;
 }
-
-.search-bar {
-  position: relative;
-  float: right;
-  margin: 2rem;
-}
-
-.search-bar input[type="text"] {
-  padding: 8px 15px 8px 10px;
-  border-radius: 5px;
-  border-color: #666;
-}
-
-.search-bar i {
-  position: absolute;
-  top: 35%;
-  left: 100%;
-  transform: translateY(-50%);
-  color: #666;
-}
-
 /* Estilos para el botón de agregar libro */
 .add-book-button {
   padding: 10px 20px;
@@ -71,30 +38,30 @@ body {
 
 /* Estilo para la sección principal */
 .main {
-    margin-top: 20px;
+  margin: 2rem;
 }
 
 /* Estilo para el contenedor de libros */
 .books-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Distribuir los libros en filas */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribuir los libros en filas */
 }
 
 /* Estilo para cada libro */
 .book {
-    width: 30%; /* Cada libro ocupa aproximadamente el 30% del ancho */
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+  width: 20%; /* Cada libro ocupa aproximadamente el 30% del ancho */
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Estilo para la imagen del libro */
 .book-img {
-    max-width: 100%; /* La imagen se ajusta al tamaño del contenedor */
-    height: auto;
+  max-width: 30%; /* La imagen se ajusta al tamaño del contenedor */
+  height: auto;
 }
 
 /* Estilos para el footer */
@@ -112,52 +79,4 @@ body {
 
 .footer a:hover {
   text-decoration: underline;
-}
-/* Estilos generales para el formulario */
-form {
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-/* Estilos para los campos de entrada */
-label,
-input,
-textarea {
-  display: block;
-  margin-bottom: 10px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="text"],
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-textarea {
-  height: 100px;
-}
-
-/* Estilos para el botón de envío */
-input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #0056b3;
 }

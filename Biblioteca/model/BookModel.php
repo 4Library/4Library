@@ -1,12 +1,14 @@
 <?php
+
 require_once __DIR__ . '/../config/Database.php';
 
 class BookModel {
     public static function getAll() {
-        global $conn;
-        // Lógica para obtener todos los libros desde la base de datos
+        global $db;
+
+        // Preparar y ejecutar la consulta para obtener todos los libros
         $sql = "SELECT * FROM libros";
-        $result = $conn->query($sql);
+        $result = $db->query($sql);
 
         // Verificar si la consulta se ejecutó correctamente
         if ($result) {
@@ -18,10 +20,11 @@ class BookModel {
     }
 
     public static function getById($id) {
-        global $conn;
-        // Lógica para obtener un libro por su ID desde la base de datos
+        global $db;
+
+        // Preparar y ejecutar la consulta para obtener el libro por su ID
         $sql = "SELECT * FROM libros WHERE id = ?";
-        $stmt = $conn->prepare($sql);
+        $stmt = $db->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -36,31 +39,41 @@ class BookModel {
     }
 
     public static function insertBook($bookData) {
-        global $conn;
-        // Lógica para insertar un libro en la base de datos
+        global $db;
+    
+        // Preparar la consulta SQL para insertar el nuevo libro
         $sql = "INSERT INTO libros (titulo, autor, descripcion, imagen) VALUES (?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
+        $stmt = $db->prepare($sql);
         $stmt->bind_param("ssss", $bookData['titulo'], $bookData['autor'], $bookData['descripcion'], $bookData['imagen']);
+    
+        // Ejecutar la consulta y verificar si se insertó correctamente
         $result = $stmt->execute();
         return $result;
     }
+    
 
-    public static function update($id, $bookData) {
-        global $conn;
-        // Lógica para actualizar un libro en la base de datos
+    public function update($id, $bookData) {
+        global $db;
+
+        // Preparar la consulta SQL para actualizar el libro
         $sql = "UPDATE libros SET titulo = ?, autor = ?, descripcion = ?, imagen = ? WHERE id = ?";
-        $stmt = $conn->prepare($sql);
+        $stmt = $db->prepare($sql);
         $stmt->bind_param("ssssi", $bookData['titulo'], $bookData['autor'], $bookData['descripcion'], $bookData['imagen'], $id);
+
+        // Ejecutar la consulta y verificar si se actualizó correctamente
         $result = $stmt->execute();
         return $result;
     }
 
-    public static function delete($id) {
-        global $conn;
-        // Lógica para eliminar un libro de la base de datos
+    public function delete($id) {
+        global $db;
+
+        // Preparar la consulta SQL para eliminar el libro
         $sql = "DELETE FROM libros WHERE id = ?";
-        $stmt = $conn->prepare($sql);
+        $stmt = $db->prepare($sql);
         $stmt->bind_param("i", $id);
+
+        // Ejecutar la consulta y verificar si se eliminó correctamente
         $result = $stmt->execute();
         return $result;
     }

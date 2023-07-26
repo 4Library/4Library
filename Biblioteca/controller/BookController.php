@@ -12,7 +12,7 @@ switch ($action) {
         // Obtener todos los libros desde el modelo
         $libros = BookModel::getAll();
         // Mostrar la vista para listar los libros
-        require_once __DIR__ . '/../view/book/list.php';
+        require_once __DIR__ . '/../index.php';
         break;
 
     case 'show':
@@ -37,25 +37,42 @@ switch ($action) {
             $titulo = $_POST['titulo'];
             $autor = $_POST['autor'];
             $descripcion = $_POST['descripcion'];
-            $imagen = $_POST['imagen']; // Aquí puedes almacenar la URL de la imagen o manejar el archivo de imagen subido
 
-            // Crear un nuevo libro con los datos ingresados
-            $nuevoLibro = array(
-                'titulo' => $titulo,
-                'autor' => $autor,
-                'descripcion' => $descripcion,
-                'imagen' => $imagen
-            );
+            // Obtener información de la imagen
+            $imagen = $_FILES['imagen'];
+            $imagenNombre = $imagen['name'];
+            $imagenTmp = $imagen['tmp_name'];
 
-            // Insertar el nuevo libro en la base de datos utilizando el método insertBook() en el modelo
-            $resultado = BookModel::insertBook($nuevoLibro);
+            // Ruta donde se guardará la imagen en el servidor
+            $rutaImagen = 'Biblioteca\resources\img' . uniqid() . '_' . $imagenNombre;
 
-            if ($resultado) {
-                // Redirigir a la lista de libros después de agregar el libro
-                header('Location: BookController.php?action=list');
-                exit();
+            echo $rutaImagen;
+            $directorioImagenes = __DIR__ . 'Biblioteca\resources\img';
+            if (!file_exists($directorioImagenes)) {
+                mkdir($directorioImagenes, 0777, true);
+            }
+            // Mover la imagen del directorio temporal a la carpeta de imágenes en el servidor
+            if (move_uploaded_file($imagenTmp, $rutaImagen)) {
+                // Crear un nuevo libro con los datos ingresados, incluyendo la ruta de la imagen
+                $nuevoLibro = array(
+                    'titulo' => $titulo,
+                    'autor' => $autor,
+                    'descripcion' => $descripcion,
+                    'imagen' => $rutaImagen // Guardar la ruta de la imagen en la base de datos
+                );
+
+                // Insertar el nuevo libro en la base de datos utilizando el método insertBook() en el modelo
+                $resultado = BookModel::insertBook($nuevoLibro);
+
+                if ($resultado) {
+                    // Redirigir a la lista de libros después de agregar el libro
+                    header('Location: BookController.php?action=list');
+                    exit();
+                } else {
+                    echo 'Error al agregar el libro';
+                }
             } else {
-                echo 'Error al agregar el libro';
+                echo "Error al mover la imagen";
             }
         } else {
             // Mostrar el formulario para agregar un nuevo libro
@@ -83,11 +100,11 @@ switch ($action) {
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             // Llamar al método delete() del modelo para eliminar el libro
-            $resultado = BookModel::delete($id);
+            $resultado = BookModel::delete(array('id' => $id));
 
-            // Verificar si la eliminación fue exitosa y redirigir nuevamente a la lista de libros
+            // Verificar si la eliminación fue exitosa y redirigir nuevamente a la página principal (index.php)
             if ($resultado) {
-                header('Location: BookController.php?action=list');
+                header('Location: index.php');
                 exit();
             } else {
                 echo 'Error al eliminar el libro';

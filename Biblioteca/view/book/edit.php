@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Editar Libro</title>
-    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/style-form.css">
 </head>
 <body>
     <h1>Editar Libro</h1>
