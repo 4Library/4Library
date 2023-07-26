@@ -14,7 +14,7 @@
 
             <label for="exampleInputEmail1" class="form-label">Portada del libro</label>
 
-            <input type="" name="image" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="url" name="image" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
             <label for="exampleInputEmail1" class="form-label">Descripción del libro</label>
 
