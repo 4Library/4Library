@@ -3,7 +3,7 @@
         private $model;
 
         public function __construct(){
-            require_once("c://xampp/htdocs/4Library/Biblioteca/model/booksModel.php");
+            require_once("c://xampp/htdocs/4Library/Biblioteca/model/BookModel.php");
             $this->model = new booksModel();
         }
 
