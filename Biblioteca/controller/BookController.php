@@ -1,104 +1,32 @@
 <?php
-require_once __DIR__ . '/../model/BookModel.php';
+    class booksController{
+        private $model;
 
-if (isset($_GET['action'])) {
-    $action = $_GET['action'];
-} else {
-    $action = 'list';
-}
-
-switch ($action) {
-    case 'list':
-        // Obtener todos los libros desde el modelo
-        $libros = BookModel::getAll();
-        // Mostrar la vista para listar los libros
-        require_once __DIR__ . '/../view/book/list.php';
-        break;
-
-    case 'show':
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            // Obtener un libro por su ID desde el modelo
-            $libro = BookModel::getById($id);
-            // Mostrar la vista para mostrar los detalles del libro
-            if ($libro) {
-                require_once '../view/book/detail.php';
-            } else {
-                echo 'El libro no fue encontrado.';
-            }
-        } else {
-            echo 'ID de libro no especificado.';
+        public function __construct(){
+            require_once("c://xampp/htdocs/4Library/Biblioteca/model/booksModel.php");
+            $this->model = new booksModel();
         }
-        break;
 
-    case 'create':
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Procesar el formulario para agregar el nuevo libro
-            $titulo = $_POST['titulo'];
-            $autor = $_POST['autor'];
-            $descripcion = $_POST['descripcion'];
-            $imagen = $_POST['imagen']; // Aquí puedes almacenar la URL de la imagen o manejar el archivo de imagen subido
-
-            // Crear un nuevo libro con los datos ingresados
-            $nuevoLibro = array(
-                'titulo' => $titulo,
-                'autor' => $autor,
-                'descripcion' => $descripcion,
-                'imagen' => $imagen
-            );
-
-            // Insertar el nuevo libro en la base de datos utilizando el método insertBook() en el modelo
-            $resultado = BookModel::insertBook($nuevoLibro);
-
-            if ($resultado) {
-                // Redirigir a la lista de libros después de agregar el libro
-                header('Location: BookController.php?action=list');
-                exit();
-            } else {
-                echo 'Error al agregar el libro';
-            }
-        } else {
-            // Mostrar el formulario para agregar un nuevo libro
-            require_once '../view/book/create.php';
+        public function saveBook($title, $author, $image, $description, $isbn){
+            $id = $this->model->insertBook($title, $author, $image, $description, $isbn);
+            
+            return ($id!=false) ? header("Location:show.php?id=".$id) : header("Location:create.php");
         }
-        break;
 
-    case 'edit':
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            // Obtener un libro por su ID desde el modelo
-            $libro = BookModel::getById($id);
-            // Mostrar la vista para editar el libro
-            if ($libro) {
-                require_once '../view/book/edit.php';
-            } else {
-                echo 'El libro no fue encontrado.';
-            }
-        } else {
-            echo 'ID de libro no especificado.';
+        public function showBook($id){
+            return ($this->model->showBook($id) != false) ? $this->model->showBook($id) : header("Location:index.php");
         }
-        break;
 
-    case 'delete':
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-            // Llamar al método delete() del modelo para eliminar el libro
-            $resultado = BookModel::delete($id);
-
-            // Verificar si la eliminación fue exitosa y redirigir nuevamente a la lista de libros
-            if ($resultado) {
-                header('Location: BookController.php?action=list');
-                exit();
-            } else {
-                echo 'Error al eliminar el libro';
-            }
-        } else {
-            echo 'ID de libro no especificado.';
+        public function indexBooks(){
+            return ($this->model->indexBooks()) ? $this->model->indexBooks() : false;
         }
-        break;
 
-    default:
-        echo 'Acción no válida';
-        break;
-}
+        public function updateBook($id, $title, $author, $image, $description, $isbn){
+            return ($this->model->updateBook($id, $title, $author, $image, $description, $isbn) != false) ? header("Location:show.php?id=".$id) : header("Location:index.php");
+        }
+
+        public function deleteBook($id){
+            return ($this->model->deleteBook($id)) ? header("Location:index.php") : header("Location:show.php?id=".$id);
+        }
+    }
 ?>
