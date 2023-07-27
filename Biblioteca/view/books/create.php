@@ -15,8 +15,7 @@ require_once("c://xampp/htdocs/4Library/Biblioteca/view/head/head.php");
             aria-describedby="emailHelp">
 
         <label for="exampleInputImageURL" class="form-label">URL de la imagen</label>
-        <input type="text" name="image_url" required class="form-control" id="exampleInputImageURL"
-            placeholder="Ingresa la URL de la imagen">
+        <input type="text" name="image_url" required class="form-control" id="exampleInputImageURL">
 
 
         <label for="exampleInputEmail1" class="form-label">Descripción del libro</label>
@@ -31,7 +30,7 @@ require_once("c://xampp/htdocs/4Library/Biblioteca/view/head/head.php");
 
     <button type="submit" class="btn btn-primary">Guardar</button>
 
-    <a href="index.php" class="btn btn-danger">Cancelar</a>
+    <a href="/4Library/Biblioteca/index.php" class="btn btn-danger">Cancelar</a>
 </form>
 
 <?php
