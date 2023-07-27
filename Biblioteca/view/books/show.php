@@ -27,7 +27,6 @@ $date = $obj->showBook($_GET['id']);
                 <?= $date["description"] ?>
             </p>
 
-            <!-- Botón de eliminar y modal -->
             <div class="col-md-8">
                 <div class="pb-3">
                     <a href="/4Library/Biblioteca/index.php" class="btn btn-primary">Regresar</a>
@@ -37,7 +36,6 @@ $date = $obj->showBook($_GET['id']);
                 </div>
             </div>
 
-            <!-- Modal -->
             <div class="modal fade" id="id<?= $date["id"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">

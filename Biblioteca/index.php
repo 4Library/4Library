@@ -7,19 +7,18 @@ $rows = $obj->indexBooks();
 ?>
 
 <div class="row justify-content-start">
-    <div class="col-md-4 col-sm-6 col-xs-12">
-        <!-- Aquí ajusta el tamaño del contenedor del botón según tus necesidades -->
-        <a href="/4Library/Biblioteca/view/books/create.php" class="btn btn-primary btn-block">Agregar
-            libro</a>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <a href="/4Library/Biblioteca/view/books/create.php" class="btn btn-primary btn-block">Agregar
+                libro</a>
+        </div>
     </div>
-</div>
-<h2 class="text-center mb-5">¡Bienvenido a tu rincon de lecturas!</h2>
+    <h2 class="text-center mb-5">¡Bienvenido a tu rincon de lecturas!</h2>
 <div class="container">
 
     <?php if (isset($rows) && !empty($rows)): ?>
         <div class="row">
             <?php foreach ($rows as $row): ?>
-                <div class="col-md-2 col-sm-4 col-xs-6 m-2">
+                <div class="col-md-2 col-sm-4 col-xs-6">
                     <div class="card h-100">
                         <img src="<?= $row["image"] ?>" class="card-img-top" alt="Portada del libro" style="max-width: 100%;">
                         <div class="card-body">
