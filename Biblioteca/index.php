@@ -8,7 +8,7 @@ $rows = $obj->indexBooks();
 
 <div class="row justify-content-start">
         <div class="col-md-4 col-sm-6 col-xs-12">
-            <a href="/4Library/Biblioteca/view/books/create.php" class="btn btn-primary btn-block">Agregar
+            <a href="/4Library/Biblioteca/view/books/create.php" class="btn btn-primary btn-block">
                 libro</a>
         </div>
     </div>
