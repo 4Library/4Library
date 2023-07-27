@@ -7,7 +7,7 @@
     $book = $obj->showBook($_GET['id']);
 ?>
 
-  <form action="update.php" method="post" autocomplete="off">
+  <form class="m-4" action="update.php" method="post" autocomplete="off">
     <h2>Modificando datos del libro</h2>
 
     <div class="mb-3 row">
@@ -53,7 +53,7 @@
     </div>
 
     <div>
-        <input type="submit" class="btn btn-success" value="Actualizar">
+        <input type="submit" class="btn btn-primary" value="Actualizar">
         <a class="btn btn-danger" href="show.php?id=<?= $book[0]?>">Cancelar</a>
     </div>
   </form>

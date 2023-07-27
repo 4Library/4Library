@@ -1,16 +1,14 @@
 <?php
     require_once("c://xampp/htdocs/4Library/Biblioteca/view/head/head.php");
-
     require_once("c://xampp/htdocs/4Library/Biblioteca/controller/BookController.php");
 
     $obj = new booksController();
     $rows = $obj->indexBooks();
 ?>
     <div class="mb-3">
-        <a href="/proyecto/view/books/create.php" class="btn btn-primary">Agregar un nuevo libro</a>
+    <a href="/4Library/Biblioteca/view/books/create.php" class="btn btn-primary m-2">Agregar un nuevo libro</a>
     </div>
 
-    </div>
     <h2 class="text-center mb-5">¡Bienvenido a tu rincon de lecturas!</h2>
 <div class="container">
 

@@ -3,7 +3,7 @@ require_once("c://xampp/htdocs/4Library/Biblioteca/view/head/head.php");
 ?>
 
 <form action="store.php" method="POST" autocomplete="off">
-    <div class="mb-3">
+    <div class="m-4">
         <label for="exampleInputEmail1" class="form-label">Título del libro</label>
 
         <input type="text" name="title" required class="form-control" id="exampleInputEmail1"
@@ -28,7 +28,7 @@ require_once("c://xampp/htdocs/4Library/Biblioteca/view/head/head.php");
         <input type="" name="isbn" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
 
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary m-4">Guardar</button>
 
     <a href="/4Library/Biblioteca/index.php" class="btn btn-danger">Cancelar</a>
 </form>

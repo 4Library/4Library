@@ -6,7 +6,7 @@ $obj = new booksController();
 $date = $obj->showBook($_GET['id']);
 ?>
 
-<h2  class="custom-title">Detalles del libro</h2>
+<h2 class="text-center mb-5">Detalle del libro</h2>
 
 <div class="container mt-5">
     <div class="row">
