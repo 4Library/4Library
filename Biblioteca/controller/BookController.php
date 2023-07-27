@@ -44,7 +44,7 @@
         }
 
         public function deleteBook($id){
-            return ($this->model->deleteBook($id)) ? header("Location:index.php") : header("Location:show.php?id=".$id);
+            return ($this->model->deleteBook($id)) ? header("Location:/4Library/Biblioteca/index.php") : header("Location:show.php?id=".$id);
         }
     }
 ?>
