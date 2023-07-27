@@ -1,7 +1,5 @@
 <?php
 
-require_once("c://xampp/htdocs/4Library/Biblioteca/view/head/head.php");
-
 $host = "localhost";
 $dbname = "library_db";
 $username = "root";
