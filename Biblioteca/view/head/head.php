@@ -48,13 +48,11 @@
     <div class="header-bg container-fluid p-2 mb-3">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/4Library/Biblioteca/index.php">
-                    <img src="4Library/Biblioteca/resources/img/Logo-def.png" alt="Logo" width="100" height="40">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="/4Library/Biblioteca/index.php">
+            <img src="../../resources/img/Logo-def.png" alt="Logo" width="100" height="40">
+        </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="search-bar">
                     <input type="text" id="searchInput" placeholder="Buscar por título o autor">
