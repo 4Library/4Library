@@ -2,7 +2,7 @@
 
 # 📚🗃 4Library
 ***
-.
+4Library is a virtual library that organizes and manages your book collection, displaying a selection of different literary genres to encourage exploration of new readings and offer users an enriching experience.The platform allows the administrator to add, update and delete books to keep the inventory up to date and improve services for the community.
 
 ## 💻 Technologies
 ***
