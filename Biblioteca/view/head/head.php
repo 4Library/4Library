@@ -27,8 +27,8 @@
             </button>
                 
                 <!-- Search box -->
-                <form class="d-flex" action="buscar.php" method="GET">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" name="query">
+                <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="search" aria-label="search" name="query">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
 
@@ -36,7 +36,25 @@
         </nav>
     </div>
     <div class="container-fluid">
-      <!-- espacio para agregar contenido -->
+      <!-- Aqui es donde se supone que se mostrarà el resultado de la busqueda-->
+      <div id="resultado_busqueda"></div>
     </div>
+
+    <!-- Script para cargar el contenido de search.php en el div "resultado_busqueda" -->
+    <script>
+        function cargarBusqueda() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("resultado_busqueda").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("GET", "search.php", true);
+        xhttp.send();
+      }
+      
+      cargarBusqueda();
+    </script>
+
   </body>
 </html>
