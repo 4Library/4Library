@@ -5,11 +5,11 @@
     $obj = new booksController();
     $rows = $obj->indexBooks();
 ?>
-    <div class="mb-3">
-        <a href="/4Library/Biblioteca/view/books/create.php" class="btn btn-primary">Agregar un nuevo libro</a>
+    <div>
+        <a href="/4Library/Biblioteca/view/books/create.php" class="btn btn-primary m-2">Agregar un nuevo libro</a>
     </div>
 
-    <h2 class="text-center mb-5">¡Bienvenido a tu rincon de lecturas!</h2>
+    <h2 class="text-center mb-4">¡Bienvenido a tu rincon de lecturas!</h2>
 <div class="container">
 
     <?php if (isset($rows) && !empty($rows)): ?>

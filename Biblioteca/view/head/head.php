@@ -45,7 +45,7 @@
 </head>
 
 <body>
-    <div class="header-bg container-fluid p-2 mb-3">
+    <div class="header-bg container-fluid p-2">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
             <a class="navbar-brand" href="/4Library/Biblioteca/index.php">

@@ -1,13 +1,13 @@
 .search-bar {
   position: absolute;
-  bottom: 92%;
+  bottom: 20%;
   right: 20px;
   display: flex;
   align-items: center;
 }
 
 .search-bar input[type="text"] {
-  padding: 8px 25px;
+  padding: 4px 25px;
   border-radius: 5px;
   border: 1px solid #666;
 }
@@ -16,5 +16,4 @@
   position: absolute;
   right: 10px;
   top: 7px;
-  pointer-events: none;
 }
