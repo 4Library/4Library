@@ -7,7 +7,7 @@
     $rows = $obj->indexBooks();
 ?>
     <div class="mb-3">
-        <a href="/proyecto/view/books/create.php" class="btn btn-primary">Agregar un nuevo libro</a>
+        <a href="/4Library/Biblioteca/view/books/create.php" class="btn btn-primary">Agregar un nuevo libro</a>
     </div>
 
     </div>
