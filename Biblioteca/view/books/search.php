@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 if (isset($_GET['query'])) {
     $search_query = $_GET['query'];
 
-    $sql = "SELECT * FROM tabla_books WHERE title LIKE ? OR author LIKE ?";
+    $sql = "SELECT * FROM books WHERE title LIKE ? OR author LIKE ?";
     $stmt = $conn->prepare($sql);
     $search_query = "%$search_query%"; // Agrega los caracteres % para la búsqueda
     $stmt->bind_param("ss", $search_query, $search_query);
