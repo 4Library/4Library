@@ -1,6 +1,6 @@
 ## Team: 4Library
 
-# 📚🗃4Library
+# 📚🗃 4Library
 ***
 .
 
@@ -8,8 +8,9 @@
 ***
 <div> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
-<img 
-
+<img src="https://www.php.net/images/logos/new-php-logo.svg" alt="PHP" width="40" height="40"/>
+<a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/>
+</div>
 
 ## 🛠 Tools
 ***
@@ -31,10 +32,6 @@
 ***
 1. Clonar el proyecto 
 - git clone https://github.com/4Library/4Library.git
-
-
-
-
 
 ## 👾 Developers
 ***
