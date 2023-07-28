@@ -27,7 +27,7 @@
             </button>
                 
                 <!-- Search box -->
-                <form class="d-flex">
+                <<form class="d-flex" action="books/search.php" method="GET">
                 <input class="form-control me-2" type="search" placeholder="search" aria-label="search" name="query">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>

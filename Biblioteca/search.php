@@ -1,4 +1,5 @@
 <?php
+require_once("controller/BookController.php");
 
 $host = "localhost";
 $dbname = "library_db";
@@ -13,13 +14,17 @@ if ($conn->connect_error) {
 if (isset($_GET['query'])) {
     $search_query = $_GET['query'];
 
+    echo "Búsqueda recibida: " . $search_query . "<br>";
+
     $sql = "SELECT * FROM books WHERE title LIKE ? OR author LIKE ?";
     $stmt = $conn->prepare($sql);
-    $search_query = "%$search_query%"; // Agrega los caracteres % para la búsqueda
+    $search_query = "%$search_query%"; 
     $stmt->bind_param("ss", $search_query, $search_query);
     $stmt->execute();
 
     $result = $stmt->get_result();
+
+    var_dump($result->num_rows);
 
     // Muestra los resultados
     if ($result->num_rows > 0) {
